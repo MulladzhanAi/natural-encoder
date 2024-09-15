@@ -13,7 +13,8 @@ Flutter проект для шифрования сообщения методо
 
 Чтобы запустить проект у вас должен быть установлен Flutter.После в терминале скачиваем все зависимости:
 flutter pub get
-И запускаем удобным Вам способом
+И запускаем  web версию
+
 
 A few resources to get you started if this is your first Flutter project:
 
