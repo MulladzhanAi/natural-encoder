@@ -11,6 +11,10 @@ Flutter проект для шифрования сообщения методо
 
 Проект написан на Чистой архитектуре, используя разделения классов, выноса абстракции через интерфейсы и управление state menegment через cubit
 
+Чтобы запустить проект у вас должен быть установлен Flutter.После в терминале скачиваем все зависимости:
+flutter pub get
+И запускаем удобным Вам способом
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
