@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:natural_encoder/constans.dart';
+import 'package:natural_encoder/domain/file_services/file_service.dart';
 import 'package:natural_encoder/domain/models/frequency.dart';
 import 'package:natural_encoder/enums/encode_types.dart';
 import 'package:natural_encoder/presentation/main/main_state.dart';
@@ -21,6 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   late MainBloc bloc;
   final TextEditingController _keyController = TextEditingController();
   final TextEditingController _encodedMessageController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   @override
   void initState() {
@@ -54,6 +56,25 @@ class _MainScreenState extends State<MainScreen> {
 
                     _buildTopPanel(state),
 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomButton(
+                            onTap: (){
+                              _pickFile();
+                            },
+                            title: 'Выбрать файл'),
+
+                        CustomButton(
+                            enabled: state.encodedMessage!='',
+                            onTap: (){
+                              _saveFile(state.encodedMessage);
+                            },
+                            title: 'Сохранить файл'),
+                      ],
+                    ),
+
+
                     const SizedBox(height: 16,),
                     Row(
                       children: [
@@ -61,6 +82,7 @@ class _MainScreenState extends State<MainScreen> {
                           child: Container(
                             constraints: BoxConstraints(maxHeight: 250),
                             child: TextFormField(
+                              controller: _messageController,
                               decoration: InputDecoration(
                                 hintText: 'Введите сообщение для шифрования',
                                 border: OutlineInputBorder(
@@ -238,7 +260,7 @@ class _MainScreenState extends State<MainScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               const SizedBox(height: 16,),
-              Text("Подобранный ключ : ${key}"),
+              Text("Подобранный ключ : ${Alphabets.russian.length - (int.tryParse(key) ?? 0)}"),
               const SizedBox(height: 16,),
               Text("${message}"),
               const SizedBox(height: 16,),
@@ -313,6 +335,19 @@ class _MainScreenState extends State<MainScreen> {
             ))
       ],
     );
+  }
+
+
+  _pickFile()async{
+    FileService fileService = FileService();
+    final message = await fileService.pickFile();
+    _messageController.text = message;
+    bloc.changeMessage(message);
+  }
+
+  _saveFile(String text)async{
+    FileService fileService = FileService();
+    await fileService.saveFile(text);
   }
 
 }
