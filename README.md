@@ -1,10 +1,20 @@
 # natural_encoder
 
-A new Flutter project.
+Flutter проект для шифрования сообщения методом Цезаря,двумя массива и мотодом Тритемиуса, так же есть способ взлома методом максимального правдоподобия шифр Цезаря
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Используемые технологии:
+ - flutter_bloc(cubit)
+ - freezed
+ - fl_chart
+
+Проект написан на Чистой архитектуре, используя разделения классов, выноса абстракции через интерфейсы и управление state menegment через cubit
+
+Чтобы запустить проект у вас должен быть установлен Flutter.После в терминале скачиваем все зависимости:
+flutter pub get
+И запускаем  web версию
+
 
 A few resources to get you started if this is your first Flutter project:
 
