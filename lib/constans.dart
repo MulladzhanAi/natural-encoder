@@ -1,4 +1,5 @@
 
+import 'domain/models/alphabets_key.dart';
 import 'domain/models/frequency.dart';
 
 class Alphabets{
@@ -42,4 +43,56 @@ class Alphabets{
     Frequency('ъ', 0, 0.00037),
     Frequency('ё', 0, 0.00013)
   ];
+
+  static List<AlphabetsKeys> russianAlphabetKeys = [
+
+/*    [
+      [12, 16, 5, 16],
+      [3, 16, 6, 34],
+      [19, 13, 16, 3],
+      [16, 34, 8, 6]
+    ]*/
+
+    AlphabetsKeys(character: 'А', key: 0),
+    AlphabetsKeys(character: 'Б', key: 1),
+    AlphabetsKeys(character: 'В', key: 2),
+    AlphabetsKeys(character: 'Г', key: 3),
+    AlphabetsKeys(character: 'Д', key: 4),
+    AlphabetsKeys(character: 'Е', key: 5),
+    AlphabetsKeys(character: 'Ё', key: 6),
+    AlphabetsKeys(character: 'Ж', key: 7),
+    AlphabetsKeys(character: 'З', key: 8),
+    AlphabetsKeys(character: 'И', key: 9),
+    AlphabetsKeys(character: 'Й', key: 10),
+    AlphabetsKeys(character: 'К', key: 11),
+    AlphabetsKeys(character: 'Л', key: 12),
+    AlphabetsKeys(character: 'М', key: 13),
+    AlphabetsKeys(character: 'Н', key: 14),
+    AlphabetsKeys(character: 'О', key: 15),
+    AlphabetsKeys(character: 'П', key: 16),
+    AlphabetsKeys(character: 'Р', key: 17),
+    AlphabetsKeys(character: 'С', key: 18),
+    AlphabetsKeys(character: 'Т', key: 19),
+    AlphabetsKeys(character: 'У', key: 20),
+    AlphabetsKeys(character: 'Ф', key: 21),
+    AlphabetsKeys(character: 'Х', key: 22),
+    AlphabetsKeys(character: 'Ц', key: 23),
+    AlphabetsKeys(character: 'Ч', key: 24),
+    AlphabetsKeys(character: 'Ш', key: 25),
+    AlphabetsKeys(character: 'Щ', key: 26),
+    AlphabetsKeys(character: 'Ь', key: 27),
+    AlphabetsKeys(character: 'Ы', key: 28),
+    AlphabetsKeys(character: 'Ъ', key: 29),
+    AlphabetsKeys(character: 'Э', key: 30),
+    AlphabetsKeys(character: 'Ю', key: 31),
+    AlphabetsKeys(character: 'Я', key: 32),
+    AlphabetsKeys(character: '.', key: 33),
+    AlphabetsKeys(character: ',', key: 34),
+    AlphabetsKeys(character: ' ', key: 35),
+    AlphabetsKeys(character: '?', key: 36),
+    //AlphabetsKeys(character: '!', key: 36),
+
+  ];
+
+
 }

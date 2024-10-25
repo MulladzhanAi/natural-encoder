@@ -4,9 +4,8 @@ import 'package:natural_encoder/domain/hacks/base_hacks_cypher.dart';
 
 class TwoArraysEncoder implements BaseEncoder {
   @override
-  Map<String, dynamic> decrypt(String message, BaseHackCypher baseHackCypher) {
-    final result = baseHackCypher.hackDecode(message);
-    return result;
+  Map<String, dynamic> decrypt<T>(String message,T key) {
+    return {"message" : "" , "key" : key};
   }
 
   @override

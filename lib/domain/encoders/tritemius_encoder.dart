@@ -4,8 +4,8 @@ import 'package:natural_encoder/domain/hacks/base_hacks_cypher.dart';
 
 class TritemiusEncoder implements BaseEncoder {
   @override
-  Map<String, dynamic> decrypt(String message, BaseHackCypher baseHackCypher) {
-    return baseHackCypher.hackDecode(message);
+  Map<String, dynamic> decrypt<T>(String message,T key) {
+    return {"message" : "","key" : key};
   }
 
   @override
