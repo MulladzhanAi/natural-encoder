@@ -32,7 +32,7 @@ class MainBloc extends Cubit<MainState>{
   }
 
   Future<Map<String,dynamic>> hackCypher(String message)async{
-    final result = state.baseEncoder?.decrypt(message, MaximumLikehoodHack());
+    final result = MaximumLikehoodHack().hackDecode(message);
     if(result==null)   return Future.value({});
 
     emit(state.copyWith(hackedMessage: result['message'] ?? "",encodedKey: result['key']));
